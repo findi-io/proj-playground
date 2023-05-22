@@ -40,7 +40,7 @@ spec:
 
   # Destination cluster and namespace to deploy the application
   destination:
-    server: https://kubernetes.default.svc
+    name: gke-us-east1
     # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
     namespace: {{.Release.Namespace}}
 
