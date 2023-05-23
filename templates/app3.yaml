@@ -31,6 +31,9 @@ spec:
       version: v3
       values: |
         architecture: standalone
+        primary:
+          podAnnotations:
+            sidecar.istio.io/inject: "false"
         auth:
           rootPassword: randomPassword
           database: findi
