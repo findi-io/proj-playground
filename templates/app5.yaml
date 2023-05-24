@@ -33,8 +33,9 @@ spec:
         podAnnotations:
           sidecar.istio.io/inject: "false"
         mysql:
-          podAnnotations:
-            sidecar.istio.io/inject: "false"
+          primary:
+            podAnnotations:
+              sidecar.istio.io/inject: "false"
         service:
           type: ClusterIP
         ingress:
