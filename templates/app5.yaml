@@ -30,6 +30,7 @@ spec:
       releaseName: ghost
       version: v3
       values: |
+        ghostPassword: randomPassword
         podAnnotations:
           sidecar.istio.io/inject: "false"
         mysql:
