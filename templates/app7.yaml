@@ -55,9 +55,10 @@ spec:
         ingress:
           enabled: true
           hostname: ghost.{{.Release.Namespace}}.findi.biz
-          tls: true
+          tls: false
           annotations:
             external-dns: "true"
+            
 
   # Destination cluster and namespace to deploy the application
   destination:
