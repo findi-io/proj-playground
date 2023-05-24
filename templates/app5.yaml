@@ -22,6 +22,21 @@ spec:
     targetRevision: "19.1.78"  # For Helm, this refers to the chart version.
     
     chart: ghost
+    helm:
+      passCredentials: false # If true then adds --pass-credentials to Helm commands to pass credentials to all domains
+      # Extra parameters to set (same as setting through values.yaml, but these take precedence)
+
+      # Release name override (defaults to application name)
+      releaseName: ghost
+      version: v3
+      values: |
+        ingress:
+          enabled: true
+          hostname: ghost.{{.Release.Namespace}}.findi.biz
+          tls: false
+          annotations:
+            external-dns: "true"
+
   # Destination cluster and namespace to deploy the application
   destination:
     name: gke-us-east1
