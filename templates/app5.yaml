@@ -30,6 +30,8 @@ spec:
       releaseName: ghost
       version: v3
       values: |
+        service:
+          type: ClusterIP
         ingress:
           enabled: true
           hostname: ghost.{{.Release.Namespace}}.findi.biz
