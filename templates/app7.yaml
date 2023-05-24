@@ -37,6 +37,8 @@ spec:
         smtpUser: "anyuser"
         smtpPassword: "anypassword"
         smtpService: "Mailgun"
+        podAnnotations:
+          sidecar.istio.io/inject: "false"
         service:
           type: ClusterIP
         ghostEnableHttps: false
@@ -47,6 +49,9 @@ spec:
           type: Recreate
         mysql:
           enabled: true
+          primary:
+            podAnnotations:
+              sidecar.istio.io/inject: "false"
         ingress:
           enabled: true
           hostname: ghost.{{.Release.Namespace}}.findi.biz
