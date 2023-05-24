@@ -38,6 +38,7 @@ spec:
           tls: false
           annotations:
             external-dns: "true"
+            cert-manager.io/issuer: issuer-nginx
 
   # Destination cluster and namespace to deploy the application
   destination:
